@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartLabGuard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>SmartLabGuard</h1>
+
+    <p class="subtitle">
+        Automated Lab Submission Validation & CI/CD System
+    </p>
+
+    <form action="/validate" method="POST">
+
+        <label>Student Name</label>
+        <input type="text" name="student" placeholder="Enter your name" required>
+
+        <label>Assignment</label>
+        <input type="text" name="assignment" placeholder="Assignment name" required>
+
+        <label>Paste Python Code</label>
+        <textarea name="code" rows="12"
+                  placeholder="Paste your Python program here..." required></textarea>
+
+        <button type="submit">
+            Validate Submission
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

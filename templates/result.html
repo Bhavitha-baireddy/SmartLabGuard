@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Validation Result</h1>
+
+    <div class="result-box">
+
+        <h2>Quality Gate</h2>
+
+        <p>
+            Syntax Check:
+            {% if result.syntax %}
+                <span class="pass">✓ PASSED</span>
+            {% else %}
+                <span class="fail">✗ FAILED</span>
+            {% endif %}
+        </p>
+
+        <p>
+            Test Check:
+            {% if result.tests %}
+                <span class="pass">✓ PASSED</span>
+            {% else %}
+                <span class="fail">✗ FAILED</span>
+            {% endif %}
+        </p>
+
+        <p>
+            Code Quality:
+            {% if result.quality %}
+                <span class="pass">✓ PASSED</span>
+            {% else %}
+                <span class="fail">✗ FAILED</span>
+            {% endif %}
+        </p>
+
+        <hr>
+
+        <h3>{{ result.message }}</h3>
+
+    </div>
+
+    <a href="/">
+        ← Submit another program
+    </a>
+
+</div>
+
+</body>
+</html>
